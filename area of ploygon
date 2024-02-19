@@ -1,0 +1,86 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void rectangle();
+void circle();
+void triangle();
+void otherpolygons();
+
+int main() {
+    int choice;
+    cout << "\t\t\t\t======to calculate the area of a ====" << endl;
+    cout << "1: circle " << endl;
+    cout << "2: rectangle " << endl;
+    cout << "3: triangle " << endl;
+    cout << "4: other polygons( square, hexagon, octagon, pentagon) " << endl;
+
+    cout << "---------------------------------------------------" << endl;
+
+    cout << "\t\t\t\t ::::" << endl;
+    cin >> choice;
+
+    switch (choice) {
+        case 1:
+            circle();
+            break;
+        case 2:
+            rectangle();
+            cout << "\t\t\tPress any key to exit" << endl;
+            break;
+        case 3:
+            triangle();
+            cout << "\t\t\tPress any key to exit" << endl;
+            break;
+        case 4:
+            otherpolygons();
+            cout << "\t\t\tPress any key to exit" << endl;
+            break;
+    }
+    return 0;
+}
+
+void otherpolygons() {
+    float no, side, area;
+
+    cout << "Enter number of sides: ";
+    cin >> no;
+
+    cout << "Enter the length of the sides: ";
+    cin >> side;
+
+    area = (no * side * side) / (4 * tan(M_PI / no));
+
+    cout << "The area of the polygon is: " << area << endl;
+}
+
+void circle() {
+    float r, area;
+    cout << "Enter radius of the circle: " << endl;
+    cin >> r;
+
+    area = M_PI * r * r;
+    cout << "the area of the circle is: " << area << endl;
+}
+
+void rectangle() {
+    float length, width, Area;
+    cout << "Enter the length: " << endl;
+    cin >> length;
+    cout << "Enter the width: " << endl;
+    cin >> width; // Fixed: changed length to width
+    Area = length * width;
+
+    cout << "the area of the rectangle is: " << Area << endl;
+}
+
+void triangle() {
+    float base, height, AreA;
+    cout << "Enter the base: " << endl;
+    cin >> base;
+    cout << "Enter the height: " << endl;
+    cin >> height;
+    AreA = 0.5 * base * height; // Fixed: added multiplication operator
+
+    cout << "the area of the triangle is: " << AreA << endl;
+}
