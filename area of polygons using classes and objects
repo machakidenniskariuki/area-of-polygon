@@ -1,0 +1,99 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Circle {
+public:
+    void calculateArea() {
+        float r, area;
+        cout << "Enter radius of the circle: " << endl;
+        cin >> r;
+
+        area = M_PI * r * r;
+        cout << "The area of the circle is: " << area << endl;
+    }
+};
+
+class Rectangle {
+public:
+    void calculateArea() {
+        float length, width, area;
+        cout << "Enter the length: " << endl;
+        cin >> length;
+        cout << "Enter the width: " << endl;
+        cin >> width;
+        area = length * width;
+
+        cout << "The area of the rectangle is: " << area << endl;
+    }
+};
+
+class Triangle {
+public:
+    void calculateArea() {
+        float base, height, area;
+        cout << "Enter the base: " << endl;
+        cin >> base;
+        cout << "Enter the height: " << endl;
+        cin >> height;
+        area = 0.5 * base * height;
+
+        cout << "The area of the triangle is: " << area << endl;
+    }
+};
+
+class OtherPolygons {
+public:
+    void calculateArea() {
+        float no, side, area;
+        cout << "Enter number of sides: ";
+        cin >> no;
+
+        cout << "Enter the length of the sides: ";
+        cin >> side;
+
+        area = (no * side * side) / (4 * tan(M_PI / no));
+
+        cout << "The area of the polygon is: " << area << endl;
+    }
+};
+
+int main() {
+    int choice;
+    cout << "\t\t\t\t======to calculate the area of a ====" << endl;
+    cout << "1: Circle " << endl;
+    cout << "2: Rectangle " << endl;
+    cout << "3: Triangle " << endl;
+    cout << "4: Other polygons (equilateral triangle, square, hexagon, octagon, pentagon) " << endl;
+
+    cout << "---------------------------------------------------" << endl;
+
+    cout << "\t\t\t\t ::::" << endl;
+    cin >> choice;
+
+    switch (choice) {
+        case 1: {
+            Circle circleObj;
+            circleObj.calculateArea();
+            break;
+        }
+        case 2: {
+            Rectangle rectangleObj;
+            rectangleObj.calculateArea();
+            break;
+        }
+        case 3: {
+            Triangle triangleObj;
+            triangleObj.calculateArea();
+            break;
+        }
+        case 4: {
+            OtherPolygons otherPolygonsObj;
+            otherPolygonsObj.calculateArea();
+            break;
+        }
+    }
+
+    cout << "\t\t\tPress any key to exit" << endl;
+    return 0;
+}choice 
